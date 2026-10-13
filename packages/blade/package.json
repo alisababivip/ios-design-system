@@ -2,8 +2,16 @@
   "name": "@nlpgroup/blade",
   "version": "0.1.0",
   "description": "Laravel Blade Components & Directives bridge for iOS Design System",
+  "repository": "https://github.com/alisababivip/ios-design-system.git",
+  "homepage": "https://alisababivip.github.io/ios-design-system/",
+  "license": "MIT",
+  "author": "NLP Group <contact@nlpgroup.vn>",
   "main": "dist/index.js",
   "files": ["dist", "src/blade"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "clean": "rimraf dist"

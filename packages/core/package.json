@@ -2,6 +2,10 @@
   "name": "@nlpgroup/core",
   "version": "0.1.0",
   "description": "Web Components (Custom Elements) chuẩn iOS HIG — framework-agnostic",
+  "repository": "https://github.com/alisababivip/ios-design-system.git",
+  "homepage": "https://alisababivip.github.io/ios-design-system/",
+  "license": "MIT",
+  "author": "NLP Group <contact@nlpgroup.vn>",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "exports": {
@@ -13,6 +17,10 @@
   },
   "files": ["dist"],
   "sideEffects": ["**/*.css"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts && pnpm css:build",
     "css:build": "node scripts/css-bundle.mjs",

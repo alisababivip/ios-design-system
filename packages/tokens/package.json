@@ -2,12 +2,20 @@
   "name": "@nlpgroup/tokens",
   "version": "0.1.0",
   "description": "Design tokens — Colors, Typography, Spacing, Shadows, Radii (CSS Variables + JSON)",
+  "repository": "https://github.com/alisababivip/ios-design-system.git",
+  "homepage": "https://alisababivip.github.io/ios-design-system/",
+  "license": "MIT",
+  "author": "NLP Group <contact@nlpgroup.vn>",
   "main": "dist/tokens.css",
   "exports": {
     ".": "./dist/tokens.css",
     "./tokens.json": "./dist/tokens.json"
   },
   "files": ["dist"],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  },
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "node scripts/build.mjs --watch",

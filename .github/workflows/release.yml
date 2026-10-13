@@ -1,4 +1,4 @@
-name: Release & Publish Packages
+name: Release & Publish to GitHub Packages
 
 on:
   push:
@@ -11,26 +11,29 @@ concurrency:
 
 jobs:
   release:
-    name: Build & Publish to npm
+    name: Build & Publish to GitHub Packages
     runs-on: ubuntu-latest
     permissions:
-      contents: write      # tạo GitHub Release
-      id-token: write      # npm provenance
+      contents: write       # tạo GitHub Release
+      packages: write       # publish lên GitHub Packages
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # cần full history cho changeset
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v3
         with:
           version: 9
 
+      # Dùng GITHUB_TOKEN để xác thực với npm.pkg.github.com
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: pnpm
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@nlpgroup'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -41,57 +44,64 @@ jobs:
       - name: Run tests
         run: pnpm test --if-present
 
-      # ── Publish mỗi package lên npmjs ──────────────────────
+      # ── Publish từng package lên GitHub Packages ───────────
       - name: Publish @nlpgroup/tokens
-        run: pnpm publish --filter @nlpgroup/tokens --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/tokens --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish @nlpgroup/icons
-        run: pnpm publish --filter @nlpgroup/icons --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/icons --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish @nlpgroup/core
-        run: pnpm publish --filter @nlpgroup/core --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/core --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish @nlpgroup/vue
-        run: pnpm publish --filter @nlpgroup/vue --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/vue --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish @nlpgroup/react
-        run: pnpm publish --filter @nlpgroup/react --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/react --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish @nlpgroup/blade
-        run: pnpm publish --filter @nlpgroup/blade --access public --no-git-checks
+        run: pnpm publish --filter @nlpgroup/blade --no-git-checks
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── Tạo GitHub Release tự động ──────────────────────────
+      # ── Tạo GitHub Release tự động ─────────────────────────
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
           body: |
-            ## 📦 Packages Published
+            ## 📦 Packages Published to GitHub Packages
 
-            | Package | Version |
-            |---------|---------|
-            | `@nlpgroup/tokens` | ${{ github.ref_name }} |
-            | `@nlpgroup/icons`  | ${{ github.ref_name }} |
-            | `@nlpgroup/core`   | ${{ github.ref_name }} |
-            | `@nlpgroup/vue`    | ${{ github.ref_name }} |
-            | `@nlpgroup/react`  | ${{ github.ref_name }} |
-            | `@nlpgroup/blade`  | ${{ github.ref_name }} |
+            | Package | Version | Install |
+            |---------|---------|---------|
+            | `@nlpgroup/tokens` | `${{ github.ref_name }}` | `pnpm add @nlpgroup/tokens@${{ github.ref_name }}` |
+            | `@nlpgroup/icons`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/icons@${{ github.ref_name }}` |
+            | `@nlpgroup/core`   | `${{ github.ref_name }}` | `pnpm add @nlpgroup/core@${{ github.ref_name }}` |
+            | `@nlpgroup/vue`    | `${{ github.ref_name }}` | `pnpm add @nlpgroup/vue@${{ github.ref_name }}` |
+            | `@nlpgroup/react`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/react@${{ github.ref_name }}` |
+            | `@nlpgroup/blade`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/blade@${{ github.ref_name }}` |
 
+            ### Cài đặt
+
+            Thêm vào `.npmrc` của project:
+            ```
+            @nlpgroup:registry=https://npm.pkg.github.com
+            ```
+
+            Sau đó:
             ```bash
-            pnpm add @nlpgroup/tokens@${{ github.ref_name }}
-            pnpm add @nlpgroup/core@${{ github.ref_name }}
+            pnpm add @nlpgroup/tokens @nlpgroup/core
             ```
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
