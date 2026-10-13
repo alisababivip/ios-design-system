@@ -3,14 +3,10 @@ name: Deploy Docs to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - 'apps/docs/**'
-      - 'packages/tokens/src/**'
-      - 'packages/core/src/**'
-  workflow_dispatch:   # cho phép chạy thủ công từ Actions tab
+  workflow_dispatch:
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
 permissions:
@@ -19,13 +15,13 @@ permissions:
   id-token: write
 
 jobs:
-  build-docs:
+  build:
     name: Build VitePress Docs
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0   # cần cho VitePress lastUpdated
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v3
         with:
@@ -39,21 +35,18 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build tokens & core (dependencies)
-        run: pnpm build --filter @nlpgroup/tokens --filter @nlpgroup/core
-
-      - name: Build Docs site
-        run: pnpm --filter docs build
+      - name: Build VitePress
+        run: pnpm --filter docs run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: apps/docs/.vitepress/dist
 
-  deploy-docs:
+  deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    needs: build-docs
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -61,27 +54,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
-  # ── Tuỳ chọn: Deploy Showcase lên Vercel ───────────────────
-  deploy-showcase:
-    name: Deploy Showcase (Vercel)
-    runs-on: ubuntu-latest
-    needs: build-docs
-    if: ${{ vars.VERCEL_TOKEN != '' }}
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: pnpm
-
-      - name: Install & Build Showcase
-        run: pnpm install --frozen-lockfile && pnpm --filter showcase build
-
-      - name: Deploy to Vercel
-        run: npx vercel --prod --token ${{ secrets.VERCEL_TOKEN }} apps/showcase/dist

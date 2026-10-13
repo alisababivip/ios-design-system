@@ -1,5 +1,5 @@
 {
-  "name": "docs",
+  "name": "@nlpgroup/docs",
   "private": true,
   "version": "0.0.1",
   "description": "NLP Group iOS UI — Documentation site (VitePress)",
@@ -12,9 +12,5 @@
   "devDependencies": {
     "rimraf": "^5.0.7",
     "vitepress": "^1.3.0"
-  },
-  "dependencies": {
-    "@nlpgroup/tokens": "workspace:*",
-    "@nlpgroup/core": "workspace:*"
   }
 }
