@@ -1,0 +1,19 @@
+{
+  "name": "@nlpgroup/tokens",
+  "version": "0.1.0",
+  "description": "Design tokens — Colors, Typography, Spacing, Shadows, Radii (CSS Variables + JSON)",
+  "main": "dist/tokens.css",
+  "exports": {
+    ".": "./dist/tokens.css",
+    "./tokens.json": "./dist/tokens.json"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --watch",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7"
+  }
+}

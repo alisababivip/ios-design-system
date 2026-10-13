@@ -1,0 +1,25 @@
+{
+  "name": "@nlpgroup/icons",
+  "version": "0.1.0",
+  "description": "Icon tokens, SVG assets, SF Symbols map & animation keyframes",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./css": "./dist/icons.css"
+  },
+  "files": ["dist", "src/svg"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "clean": "rimraf dist"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}

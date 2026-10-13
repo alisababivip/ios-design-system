@@ -1,0 +1,85 @@
+/* ============================================================
+   CupertinoStepper — iOS + / − Stepper
+   Usage:
+     <div class="ios-stepper" role="group" aria-label="Số lượng">
+       <button class="ios-stepper__btn ios-stepper__btn--dec" aria-label="Giảm">−</button>
+       <span class="ios-stepper__value">3</span>
+       <button class="ios-stepper__btn ios-stepper__btn--inc" aria-label="Tăng">+</button>
+     </div>
+   ============================================================ */
+
+.ios-stepper {
+  display: inline-flex;
+  align-items: stretch;
+  height: 32px;
+  border-radius: var(--ios-radius-sm);
+  overflow: hidden;
+  background: var(--ios-fill-tertiary);
+  border: 0.5px solid var(--ios-separator);
+}
+
+/* ── Divider between segments ───────────────────────────────── */
+.ios-stepper__btn + .ios-stepper__value,
+.ios-stepper__value + .ios-stepper__btn {
+  border-left: 0.5px solid var(--ios-separator);
+}
+
+/* ── +/- Button ─────────────────────────────────────────────── */
+.ios-stepper__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: 300;
+  color: var(--ios-system-blue);
+  -webkit-tap-highlight-color: transparent;
+  transition: background var(--ios-duration-fast) var(--ios-ease-smooth);
+}
+
+.ios-stepper__btn:active {
+  background: var(--ios-fill-secondary);
+}
+
+.ios-stepper__btn:disabled {
+  color: var(--ios-label-tertiary);
+  cursor: not-allowed;
+}
+
+/* ── Value display ──────────────────────────────────────────── */
+.ios-stepper__value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  padding: 0 var(--ios-space-2);
+  font: var(--ios-text-body);
+  font-weight: 400;
+  color: var(--ios-label-primary);
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* ── Large variant ──────────────────────────────────────────── */
+.ios-stepper--lg {
+  height: 42px;
+}
+.ios-stepper--lg .ios-stepper__btn {
+  width: 42px;
+  font-size: 24px;
+}
+.ios-stepper--lg .ios-stepper__value {
+  min-width: 56px;
+  font-size: 17px;
+}
+
+/* ── Disabled whole stepper ─────────────────────────────────── */
+.ios-stepper[aria-disabled="true"] {
+  opacity: 0.38;
+  pointer-events: none;
+}

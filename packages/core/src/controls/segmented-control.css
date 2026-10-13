@@ -1,0 +1,105 @@
+/* ============================================================
+   CupertinoSegmentedControl — iOS Segmented Control
+   Usage:
+     <div class="ios-segmented-control" role="tablist">
+       <input type="radio" name="seg" id="s1" checked />
+       <label for="s1">Ngày</label>
+       <input type="radio" name="seg" id="s2" />
+       <label for="s2">Tháng</label>
+       <input type="radio" name="seg" id="s3" />
+       <label for="s3">Năm</label>
+     </div>
+   ============================================================ */
+
+.ios-segmented-control {
+  display: inline-flex;
+  position: relative;
+  padding: 2px;
+  background: var(--ios-fill-tertiary);
+  border-radius: 9px;
+  /* Glassmorphism on supported browsers */
+  backdrop-filter: var(--ios-blur-thin);
+  -webkit-backdrop-filter: var(--ios-blur-thin);
+  gap: 0;
+}
+
+/* Hide radio inputs */
+.ios-segmented-control input[type="radio"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Segment label ──────────────────────────────────────────── */
+.ios-segmented-control label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 16px;
+  min-width: 60px;
+  font: var(--ios-text-footnote);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--ios-label-primary);
+  border-radius: 7px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color var(--ios-duration-fast) var(--ios-ease-smooth);
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* ── Active segment pill ────────────────────────────────────── */
+.ios-segmented-control input:checked + label {
+  color: var(--ios-label-primary);
+  background: var(--ios-bg-card);
+  box-shadow:
+    0 3px 8px  rgba(0,0,0,0.12),
+    0 3px 1px  rgba(0,0,0,0.04);
+  transition:
+    background var(--ios-duration-normal) var(--ios-ease-smooth),
+    box-shadow var(--ios-duration-normal) var(--ios-ease-smooth);
+}
+
+/* ── Separator between segments (hidden when neighbour is active) */
+.ios-segmented-control label + input + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: var(--ios-separator);
+  border-radius: 1px;
+  transition: opacity var(--ios-duration-fast);
+}
+
+.ios-segmented-control input:checked + label::before,
+.ios-segmented-control input:checked + label + input + label::before {
+  opacity: 0;
+}
+
+/* ── Full-width variant ─────────────────────────────────────── */
+.ios-segmented-control--full {
+  display: flex;
+  width: 100%;
+}
+.ios-segmented-control--full label {
+  flex: 1;
+}
+
+/* ── Large size ─────────────────────────────────────────────── */
+.ios-segmented-control--lg label {
+  padding: 8px 20px;
+  font-size: 15px;
+}
+
+/* ── Disabled ───────────────────────────────────────────────── */
+.ios-segmented-control--disabled {
+  opacity: 0.38;
+  pointer-events: none;
+}

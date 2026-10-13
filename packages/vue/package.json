@@ -1,0 +1,32 @@
+{
+  "name": "@nlpgroup/vue",
+  "version": "0.1.0",
+  "description": "Vue 3 wrapper components cho iOS Design System",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "clean": "rimraf dist"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@nlpgroup/tokens": "workspace:*",
+    "@nlpgroup/core": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0",
+    "vue": "^3.4.0"
+  }
+}

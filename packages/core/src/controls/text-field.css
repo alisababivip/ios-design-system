@@ -1,0 +1,264 @@
+/* ============================================================
+   iOS Text Field — Inset Grouped Style
+   Patterns:
+     1. Standard text field
+     2. Inset Grouped (inside a .ios-group section)
+     3. Pin / OTP 6-digit
+     4. Secure / Password field
+   ============================================================ */
+
+/* ── 1. Standard Text Field ─────────────────────────────────── */
+.ios-text-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.ios-text-field__input {
+  width: 100%;
+  padding: 10px var(--ios-space-4);
+  font: var(--ios-text-body);
+  color: var(--ios-label-primary);
+  background: var(--ios-bg-card);
+  border: none;
+  border-radius: var(--ios-radius-md);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--ios-separator);
+  transition:
+    box-shadow var(--ios-duration-fast) var(--ios-ease-smooth),
+    background var(--ios-duration-fast) var(--ios-ease-smooth);
+  -webkit-font-smoothing: antialiased;
+}
+
+.ios-text-field__input::placeholder {
+  color: var(--ios-label-tertiary);
+}
+
+.ios-text-field__input:focus {
+  box-shadow:
+    0 0 0 2px var(--ios-system-blue),
+    0 0 0 4px rgba(0, 122, 255, 0.12);
+}
+
+/* Clear (×) button */
+.ios-text-field__clear {
+  position: absolute;
+  right: var(--ios-space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-gray3);
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 10px;
+  line-height: 1;
+  padding: 0;
+  transition: background var(--ios-duration-fast);
+}
+.ios-text-field__input:not(:placeholder-shown) ~ .ios-text-field__clear {
+  display: flex;
+}
+.ios-text-field__clear:hover {
+  background: var(--ios-system-gray2);
+}
+
+/* Floating label */
+.ios-text-field__label {
+  font: var(--ios-text-caption1);
+  color: var(--ios-label-secondary);
+  margin-bottom: 4px;
+  padding-left: var(--ios-space-1);
+  transition: color var(--ios-duration-fast);
+}
+.ios-text-field:focus-within .ios-text-field__label {
+  color: var(--ios-system-blue);
+}
+
+/* Error state */
+.ios-text-field--error .ios-text-field__input {
+  box-shadow: 0 0 0 2px var(--ios-system-red);
+}
+.ios-text-field__error-msg {
+  font: var(--ios-text-caption1);
+  color: var(--ios-system-red);
+  margin-top: 4px;
+  padding-left: var(--ios-space-1);
+  display: none;
+}
+.ios-text-field--error .ios-text-field__error-msg {
+  display: block;
+}
+
+/* Disabled */
+.ios-text-field__input:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* ── 2. Inset Grouped Text Field ────────────────────────────── */
+/*
+  Usage:
+    <div class="ios-group">
+      <div class="ios-group__row">
+        <span class="ios-group__row-label">Tên</span>
+        <input class="ios-group__row-input" type="text" placeholder="Họ và tên" />
+      </div>
+      <div class="ios-group__row">
+        <span class="ios-group__row-label">Email</span>
+        <input class="ios-group__row-input" type="email" placeholder="email@nlpgroup.vn" />
+      </div>
+    </div>
+*/
+.ios-group {
+  background: var(--ios-bg-card);
+  border-radius: var(--ios-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ios-shadow-sm);
+}
+
+.ios-group__row {
+  display: flex;
+  align-items: center;
+  padding: 11px var(--ios-space-4);
+  min-height: 44px;
+  gap: var(--ios-space-3);
+  position: relative;
+}
+
+/* Separator — not on last child */
+.ios-group__row:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: var(--ios-space-4);
+  right: 0;
+  height: 0.5px;
+  background: var(--ios-separator);
+}
+
+.ios-group__row-label {
+  flex-shrink: 0;
+  width: 96px;
+  font: var(--ios-text-body);
+  color: var(--ios-label-primary);
+}
+
+.ios-group__row-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font: var(--ios-text-body);
+  color: var(--ios-label-primary);
+  outline: none;
+  text-align: right;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ios-group__row-input::placeholder {
+  color: var(--ios-label-tertiary);
+}
+
+/* ── 3. PIN / OTP 6-digit Input ─────────────────────────────── */
+/*
+  Usage:
+    <div class="ios-pin-input" data-digits="6">
+      <input class="ios-pin-input__cell" type="text" maxlength="1" inputmode="numeric" />
+      × 6
+    </div>
+*/
+.ios-pin-input {
+  display: flex;
+  gap: var(--ios-space-2);
+  justify-content: center;
+}
+
+.ios-pin-input__cell {
+  width: 46px;
+  height: 56px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: var(--ios-font);
+  color: var(--ios-label-primary);
+  background: var(--ios-bg-card);
+  border: 1.5px solid var(--ios-separator);
+  border-radius: var(--ios-radius-sm);
+  outline: none;
+  caret-color: var(--ios-system-blue);
+  transition:
+    border-color var(--ios-duration-fast) var(--ios-ease-smooth),
+    box-shadow   var(--ios-duration-fast) var(--ios-ease-smooth);
+  /* Hide number input arrows */
+  -moz-appearance: textfield;
+}
+.ios-pin-input__cell::-webkit-outer-spin-button,
+.ios-pin-input__cell::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.ios-pin-input__cell:focus {
+  border-color: var(--ios-system-blue);
+  box-shadow: 0 0 0 3px rgba(0,122,255,0.18);
+}
+.ios-pin-input__cell--filled {
+  border-color: var(--ios-system-blue);
+  background: rgba(0,122,255,0.06);
+}
+.ios-pin-input--error .ios-pin-input__cell {
+  border-color: var(--ios-system-red);
+  animation: ios-pin-shake 0.4s var(--ios-ease-smooth);
+}
+
+@keyframes ios-pin-shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+/* ── 4. Secure / Password Field ─────────────────────────────── */
+/*
+  Usage:
+    <div class="ios-secure-field">
+      <input class="ios-text-field__input" type="password" placeholder="Mật khẩu" />
+      <button class="ios-secure-field__toggle" type="button" aria-label="Hiện mật khẩu">
+        👁
+      </button>
+    </div>
+*/
+.ios-secure-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.ios-secure-field .ios-text-field__input {
+  padding-right: 48px;
+}
+
+.ios-secure-field__toggle {
+  position: absolute;
+  right: var(--ios-space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: var(--ios-system-gray);
+  font-size: 16px;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--ios-duration-fast);
+}
+.ios-secure-field__toggle:hover {
+  color: var(--ios-system-blue);
+}

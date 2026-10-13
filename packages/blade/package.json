@@ -1,0 +1,20 @@
+{
+  "name": "@nlpgroup/blade",
+  "version": "0.1.0",
+  "description": "Laravel Blade Components & Directives bridge for iOS Design System",
+  "main": "dist/index.js",
+  "files": ["dist", "src/blade"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@nlpgroup/tokens": "workspace:*",
+    "@nlpgroup/core": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}

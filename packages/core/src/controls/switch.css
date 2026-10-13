@@ -1,0 +1,108 @@
+/* ============================================================
+   CupertinoSwitch — iOS Toggle Switch
+   Usage:
+     <label class="ios-switch">
+       <input type="checkbox" />
+       <span class="ios-switch__track"></span>
+     </label>
+   ============================================================ */
+
+.ios-switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+/* Hidden native checkbox */
+.ios-switch input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Track ─────────────────────────────────────────────────── */
+.ios-switch__track {
+  position: relative;
+  display: inline-block;
+  width: 51px;
+  height: 31px;
+  border-radius: var(--ios-radius-full);
+  background-color: var(--ios-system-gray3);
+  transition:
+    background-color var(--ios-duration-normal) var(--ios-ease-smooth),
+    box-shadow       var(--ios-duration-normal) var(--ios-ease-smooth);
+  /* Subtle inset shadow like real iOS */
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+/* ── Thumb ─────────────────────────────────────────────────── */
+.ios-switch__track::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: var(--ios-radius-full);
+  background: #FFFFFF;
+  box-shadow:
+    0 3px 8px  rgba(0,0,0,0.20),
+    0 1px 1px  rgba(0,0,0,0.12),
+    0 3px 1px  rgba(0,0,0,0.06);
+  transition:
+    transform     var(--ios-duration-normal) var(--ios-ease-spring),
+    width         var(--ios-duration-fast)   var(--ios-ease-smooth);
+}
+
+/* ── Checked state ──────────────────────────────────────────── */
+.ios-switch input:checked + .ios-switch__track {
+  background-color: var(--ios-system-green);
+}
+
+.ios-switch input:checked + .ios-switch__track::after {
+  transform: translateX(20px);
+}
+
+/* ── Press animation (thumb stretches like real iOS) ────────── */
+.ios-switch:active .ios-switch__track::after {
+  width: 30px;
+}
+
+.ios-switch input:checked:active + .ios-switch__track::after {
+  width: 30px;
+  transform: translateX(17px);
+}
+
+/* ── Disabled ───────────────────────────────────────────────── */
+.ios-switch input:disabled + .ios-switch__track {
+  opacity: 0.38;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Variant: Blue (default explicit) ──────────────────────── */
+.ios-switch--blue input:checked + .ios-switch__track {
+  background-color: var(--ios-system-blue);
+}
+
+/* ── Variant: Orange ────────────────────────────────────────── */
+.ios-switch--orange input:checked + .ios-switch__track {
+  background-color: var(--ios-system-orange);
+}
+
+/* ── Size: Small ────────────────────────────────────────────── */
+.ios-switch--sm .ios-switch__track {
+  width: 38px;
+  height: 23px;
+}
+.ios-switch--sm .ios-switch__track::after {
+  width: 19px;
+  height: 19px;
+}
+.ios-switch--sm input:checked + .ios-switch__track::after {
+  transform: translateX(15px);
+}

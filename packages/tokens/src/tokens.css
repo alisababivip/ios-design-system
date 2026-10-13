@@ -1,0 +1,149 @@
+/* ============================================================
+   @nlpgroup/tokens — iOS HIG Design Tokens
+   Chuẩn Apple Human Interface Guidelines
+   ============================================================ */
+
+:root {
+  /* ─── Typography Scale ─────────────────────────────────── */
+  --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Helvetica Neue", Arial, sans-serif;
+
+  --ios-text-large-title: 700 34px/41px var(--ios-font);
+  --ios-text-title1:      700 28px/34px var(--ios-font);
+  --ios-text-title2:      700 22px/28px var(--ios-font);
+  --ios-text-title3:      600 20px/25px var(--ios-font);
+  --ios-text-headline:    600 17px/22px var(--ios-font);
+  --ios-text-body:        400 17px/22px var(--ios-font);
+  --ios-text-callout:     400 16px/21px var(--ios-font);
+  --ios-text-subheadline: 400 15px/20px var(--ios-font);
+  --ios-text-footnote:    400 13px/18px var(--ios-font);
+  --ios-text-caption1:    400 12px/16px var(--ios-font);
+  --ios-text-caption2:    400 11px/13px var(--ios-font);
+
+  /* ─── System Colors — Light Mode ───────────────────────── */
+  --ios-system-blue:    #007AFF;
+  --ios-system-green:   #34C759;
+  --ios-system-indigo:  #5856D6;
+  --ios-system-orange:  #FF9500;
+  --ios-system-pink:    #FF2D55;
+  --ios-system-purple:  #AF52DE;
+  --ios-system-red:     #FF3B30;
+  --ios-system-teal:    #5AC8FA;
+  --ios-system-yellow:  #FFCC00;
+
+  /* Gray Scale */
+  --ios-system-gray:    #8E8E93;
+  --ios-system-gray2:   #AEAEB2;
+  --ios-system-gray3:   #C7C7CC;
+  --ios-system-gray4:   #D1D1D6;
+  --ios-system-gray5:   #E5E5EA;
+  --ios-system-gray6:   #F2F2F7;
+
+  /* ─── Background & Surface Hierarchy ───────────────────── */
+  --ios-bg-primary:       #FFFFFF;
+  --ios-bg-secondary:     #F2F2F7;
+  --ios-bg-tertiary:      #FFFFFF;
+  --ios-bg-grouped:       #F2F2F7;
+  --ios-bg-grouped-secondary: #FFFFFF;
+
+  --ios-bg-card:          rgba(255, 255, 255, 0.85);
+  --ios-bg-overlay:       rgba(0, 0, 0, 0.4);
+  --ios-bg-material:      rgba(242, 242, 247, 0.72);
+
+  /* ─── Label Colors ──────────────────────────────────────── */
+  --ios-label-primary:    rgba(0, 0, 0, 1);
+  --ios-label-secondary:  rgba(60, 60, 67, 0.60);
+  --ios-label-tertiary:   rgba(60, 60, 67, 0.30);
+  --ios-label-quaternary: rgba(60, 60, 67, 0.18);
+
+  /* ─── Separator & Fill ──────────────────────────────────── */
+  --ios-separator:        rgba(60, 60, 67, 0.29);
+  --ios-separator-opaque: #C6C6C8;
+  --ios-fill-primary:     rgba(120, 120, 128, 0.20);
+  --ios-fill-secondary:   rgba(120, 120, 128, 0.16);
+  --ios-fill-tertiary:    rgba(118, 118, 128, 0.12);
+  --ios-fill-quaternary:  rgba(116, 116, 128, 0.08);
+
+  /* ─── Blur / Vibrancy Material ──────────────────────────── */
+  --ios-blur-thin:     blur(8px)  saturate(120%);
+  --ios-blur-regular:  blur(20px) saturate(180%);
+  --ios-blur-thick:    blur(40px) saturate(200%);
+  --ios-blur-chrome:   blur(25px) saturate(180%);
+
+  /* ─── Border Radius — Superellipse Scale ────────────────── */
+  --ios-radius-xs:   6px;
+  --ios-radius-sm:   10px;
+  --ios-radius-md:   14px;
+  --ios-radius-lg:   20px;
+  --ios-radius-xl:   28px;
+  --ios-radius-full: 9999px;
+
+  /* ─── Spacing Scale ─────────────────────────────────────── */
+  --ios-space-1:  4px;
+  --ios-space-2:  8px;
+  --ios-space-3:  12px;
+  --ios-space-4:  16px;
+  --ios-space-5:  20px;
+  --ios-space-6:  24px;
+  --ios-space-8:  32px;
+  --ios-space-10: 40px;
+  --ios-space-12: 48px;
+
+  /* ─── Shadow ────────────────────────────────────────────── */
+  --ios-shadow-sm:  0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --ios-shadow-md:  0 3px 8px  rgba(0,0,0,0.12), 0 3px 1px rgba(0,0,0,0.04);
+  --ios-shadow-lg:  0 8px 24px rgba(0,0,0,0.14), 0 4px 8px rgba(0,0,0,0.08);
+  --ios-shadow-xl:  0 16px 48px rgba(0,0,0,0.18);
+
+  /* ─── Motion / Easing ───────────────────────────────────── */
+  --ios-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ios-ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ios-ease-in:     cubic-bezier(0.42, 0, 1, 1);
+  --ios-ease-out:    cubic-bezier(0, 0, 0.58, 1);
+  --ios-duration-fast:   150ms;
+  --ios-duration-normal: 250ms;
+  --ios-duration-slow:   400ms;
+}
+
+/* ─── Dark Mode Overrides ─────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ios-system-blue:   #0A84FF;
+    --ios-system-green:  #30D158;
+    --ios-system-indigo: #5E5CE6;
+    --ios-system-orange: #FF9F0A;
+    --ios-system-pink:   #FF375F;
+    --ios-system-purple: #BF5AF2;
+    --ios-system-red:    #FF453A;
+    --ios-system-teal:   #64D2FF;
+    --ios-system-yellow: #FFD60A;
+
+    --ios-system-gray:  #8E8E93;
+    --ios-system-gray2: #636366;
+    --ios-system-gray3: #48484A;
+    --ios-system-gray4: #3A3A3C;
+    --ios-system-gray5: #2C2C2E;
+    --ios-system-gray6: #1C1C1E;
+
+    --ios-bg-primary:           #000000;
+    --ios-bg-secondary:         #1C1C1E;
+    --ios-bg-tertiary:          #2C2C2E;
+    --ios-bg-grouped:           #000000;
+    --ios-bg-grouped-secondary: #1C1C1E;
+
+    --ios-bg-card:     rgba(28, 28, 30, 0.82);
+    --ios-bg-material: rgba(28, 28, 30, 0.72);
+
+    --ios-label-primary:    rgba(255, 255, 255, 1);
+    --ios-label-secondary:  rgba(235, 235, 245, 0.60);
+    --ios-label-tertiary:   rgba(235, 235, 245, 0.30);
+    --ios-label-quaternary: rgba(235, 235, 245, 0.18);
+
+    --ios-separator:        rgba(84, 84, 88, 0.60);
+    --ios-separator-opaque: #38383A;
+    --ios-fill-primary:     rgba(120, 120, 128, 0.36);
+    --ios-fill-secondary:   rgba(120, 120, 128, 0.32);
+    --ios-fill-tertiary:    rgba(118, 118, 128, 0.24);
+    --ios-fill-quaternary:  rgba(118, 118, 128, 0.18);
+  }
+}

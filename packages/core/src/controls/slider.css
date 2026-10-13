@@ -1,0 +1,106 @@
+/* ============================================================
+   CupertinoSlider — iOS Horizontal Slider
+   Usage:
+     <div class="ios-slider">
+       <input type="range" min="0" max="100" value="40" />
+     </div>
+   Optional icons:
+     <div class="ios-slider ios-slider--icon">
+       <span class="ios-slider__icon-min">🔈</span>
+       <input type="range" min="0" max="100" value="40" />
+       <span class="ios-slider__icon-max">🔊</span>
+     </div>
+   ============================================================ */
+
+/* ── Wrapper ────────────────────────────────────────────────── */
+.ios-slider {
+  display: flex;
+  align-items: center;
+  gap: var(--ios-space-2);
+  width: 100%;
+}
+
+.ios-slider__icon-min,
+.ios-slider__icon-max {
+  display: flex;
+  align-items: center;
+  color: var(--ios-system-gray);
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* ── Native range reset ─────────────────────────────────────── */
+.ios-slider input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex: 1;
+  height: 4px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-gray4);
+  outline: none;
+  cursor: pointer;
+  /* Fill via JS-driven CSS variable or hardcoded gradient */
+  background-image: linear-gradient(
+    var(--ios-system-blue),
+    var(--ios-system-blue)
+  );
+  background-size: var(--ios-slider-fill, 40%) 100%;
+  background-repeat: no-repeat;
+}
+
+/* ── Thumb — WebKit ─────────────────────────────────────────── */
+.ios-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--ios-radius-full);
+  background: #FFFFFF;
+  box-shadow:
+    0 3px 8px  rgba(0,0,0,0.22),
+    0 1px 2px  rgba(0,0,0,0.14),
+    0 0  0 0.5px rgba(0,0,0,0.08);
+  cursor: grab;
+  transition: transform var(--ios-duration-fast) var(--ios-ease-spring);
+}
+.ios-slider input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+  transform: scale(1.12);
+}
+
+/* ── Thumb — Firefox ────────────────────────────────────────── */
+.ios-slider input[type="range"]::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: var(--ios-radius-full);
+  background: #FFFFFF;
+  box-shadow:
+    0 3px 8px  rgba(0,0,0,0.22),
+    0 1px 2px  rgba(0,0,0,0.14);
+  cursor: grab;
+}
+.ios-slider input[type="range"]::-moz-range-track {
+  height: 4px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-gray4);
+}
+
+/* ── Variant: Green ─────────────────────────────────────────── */
+.ios-slider--green input[type="range"] {
+  background-image: linear-gradient(var(--ios-system-green), var(--ios-system-green));
+}
+
+/* ── Variant: Orange ────────────────────────────────────────── */
+.ios-slider--orange input[type="range"] {
+  background-image: linear-gradient(var(--ios-system-orange), var(--ios-system-orange));
+}
+
+/* ── Disabled ───────────────────────────────────────────────── */
+.ios-slider input[type="range"]:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+.ios-slider input[type="range"]:disabled::-webkit-slider-thumb {
+  cursor: not-allowed;
+}

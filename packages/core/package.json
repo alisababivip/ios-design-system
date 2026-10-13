@@ -1,0 +1,31 @@
+{
+  "name": "@nlpgroup/core",
+  "version": "0.1.0",
+  "description": "Web Components (Custom Elements) chuẩn iOS HIG — framework-agnostic",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    },
+    "./css": "./dist/ios-ui.css"
+  },
+  "files": ["dist"],
+  "sideEffects": ["**/*.css"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts && pnpm css:build",
+    "css:build": "node scripts/css-bundle.mjs",
+    "dev": "tsup src/index.ts --format esm,cjs --watch",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@nlpgroup/tokens": "workspace:*",
+    "@nlpgroup/icons": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.7",
+    "tsup": "^8.0.0",
+    "typescript": "^5.5.0"
+  }
+}
