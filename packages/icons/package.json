@@ -21,7 +21,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "generate": "node scripts/generate-icons.mjs",
+    "build": "node scripts/generate-icons.mjs && tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
     "clean": "rimraf dist"
   },

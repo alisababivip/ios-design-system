@@ -1,0 +1,351 @@
+
+/* ── Icon Base ─────────────────────────────────────────────── */
+.ios-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background-color: currentColor;
+  -webkit-mask-image: var(--ios-icon);
+  mask-image: var(--ios-icon);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+/* Sizes */
+.ios-icon--xs  { width: 12px; height: 12px; }
+.ios-icon--sm  { width: 16px; height: 16px; }
+.ios-icon--md  { width: 20px; height: 20px; }
+.ios-icon--lg  { width: 28px; height: 28px; }
+.ios-icon--xl  { width: 36px; height: 36px; }
+.ios-icon--2xl { width: 48px; height: 48px; }
+
+/* Color tokens */
+.ios-icon--blue   { color: var(--ios-system-blue);   }
+.ios-icon--green  { color: var(--ios-system-green);  }
+.ios-icon--orange { color: var(--ios-system-orange); }
+.ios-icon--red    { color: var(--ios-system-red);    }
+.ios-icon--purple { color: var(--ios-system-purple); }
+.ios-icon--gray   { color: var(--ios-system-gray);   }
+.ios-icon--muted  { color: var(--ios-label-tertiary); }
+
+/* Animations */
+@keyframes ios-icon-pulse  { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(.9)} }
+@keyframes ios-icon-spin   { to{transform:rotate(360deg)} }
+@keyframes ios-icon-bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
+@keyframes ios-icon-shake  { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-3px)} 75%{transform:translateX(3px)} }
+@keyframes ios-icon-ping   { 75%,100%{transform:scale(1.8);opacity:0} }
+@keyframes ios-icon-fade   { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.ios-icon--pulse  { animation: ios-icon-pulse  1.5s ease infinite; }
+.ios-icon--spin   { animation: ios-icon-spin   1s linear infinite; }
+.ios-icon--bounce { animation: ios-icon-bounce 1s ease infinite; }
+.ios-icon--shake  { animation: ios-icon-shake  0.5s ease; }
+.ios-icon--ping   { animation: ios-icon-ping   1.5s cubic-bezier(0,0,.2,1) infinite; }
+.ios-icon--fade   { animation: ios-icon-fade   2s ease infinite; }
+
+/* @nlpgroup/icons — Auto-generated CSS token map */
+
+/* ── UI ─────────────────── */
+.ios-icon-home { --ios-icon: url("../svg/ui/home.svg"); }
+.ios-icon-home-fill { --ios-icon: url("../svg/ui/home-fill.svg"); }
+.ios-icon-menu { --ios-icon: url("../svg/ui/menu.svg"); }
+.ios-icon-menu-alt { --ios-icon: url("../svg/ui/menu-alt.svg"); }
+.ios-icon-close { --ios-icon: url("../svg/ui/close.svg"); }
+.ios-icon-close-circle { --ios-icon: url("../svg/ui/close-circle.svg"); }
+.ios-icon-check { --ios-icon: url("../svg/ui/check.svg"); }
+.ios-icon-check-circle { --ios-icon: url("../svg/ui/check-circle.svg"); }
+.ios-icon-check-fill { --ios-icon: url("../svg/ui/check-fill.svg"); }
+.ios-icon-plus { --ios-icon: url("../svg/ui/plus.svg"); }
+.ios-icon-plus-circle { --ios-icon: url("../svg/ui/plus-circle.svg"); }
+.ios-icon-minus { --ios-icon: url("../svg/ui/minus.svg"); }
+.ios-icon-minus-circle { --ios-icon: url("../svg/ui/minus-circle.svg"); }
+.ios-icon-search { --ios-icon: url("../svg/ui/search.svg"); }
+.ios-icon-search-fill { --ios-icon: url("../svg/ui/search-fill.svg"); }
+.ios-icon-filter { --ios-icon: url("../svg/ui/filter.svg"); }
+.ios-icon-sort { --ios-icon: url("../svg/ui/sort.svg"); }
+.ios-icon-grid { --ios-icon: url("../svg/ui/grid.svg"); }
+.ios-icon-list { --ios-icon: url("../svg/ui/list.svg"); }
+.ios-icon-dots-h { --ios-icon: url("../svg/ui/dots-h.svg"); }
+.ios-icon-dots-v { --ios-icon: url("../svg/ui/dots-v.svg"); }
+.ios-icon-settings { --ios-icon: url("../svg/ui/settings.svg"); }
+.ios-icon-sliders { --ios-icon: url("../svg/ui/sliders.svg"); }
+.ios-icon-refresh { --ios-icon: url("../svg/ui/refresh.svg"); }
+.ios-icon-rotate-cw { --ios-icon: url("../svg/ui/rotate-cw.svg"); }
+.ios-icon-rotate-ccw { --ios-icon: url("../svg/ui/rotate-ccw.svg"); }
+.ios-icon-loader { --ios-icon: url("../svg/ui/loader.svg"); }
+.ios-icon-info { --ios-icon: url("../svg/ui/info.svg"); }
+.ios-icon-info-fill { --ios-icon: url("../svg/ui/info-fill.svg"); }
+.ios-icon-warning { --ios-icon: url("../svg/ui/warning.svg"); }
+.ios-icon-error { --ios-icon: url("../svg/ui/error.svg"); }
+.ios-icon-help { --ios-icon: url("../svg/ui/help.svg"); }
+.ios-icon-external { --ios-icon: url("../svg/ui/external.svg"); }
+.ios-icon-link { --ios-icon: url("../svg/ui/link.svg"); }
+.ios-icon-link-off { --ios-icon: url("../svg/ui/link-off.svg"); }
+.ios-icon-copy { --ios-icon: url("../svg/ui/copy.svg"); }
+.ios-icon-clipboard { --ios-icon: url("../svg/ui/clipboard.svg"); }
+.ios-icon-share { --ios-icon: url("../svg/ui/share.svg"); }
+.ios-icon-share-2 { --ios-icon: url("../svg/ui/share-2.svg"); }
+.ios-icon-download { --ios-icon: url("../svg/ui/download.svg"); }
+.ios-icon-upload { --ios-icon: url("../svg/ui/upload.svg"); }
+.ios-icon-trash { --ios-icon: url("../svg/ui/trash.svg"); }
+.ios-icon-trash-2 { --ios-icon: url("../svg/ui/trash-2.svg"); }
+.ios-icon-edit { --ios-icon: url("../svg/ui/edit.svg"); }
+.ios-icon-edit-2 { --ios-icon: url("../svg/ui/edit-2.svg"); }
+.ios-icon-pin { --ios-icon: url("../svg/ui/pin.svg"); }
+.ios-icon-pin-off { --ios-icon: url("../svg/ui/pin-off.svg"); }
+.ios-icon-navigation { --ios-icon: url("../svg/ui/navigation.svg"); }
+.ios-icon-compass { --ios-icon: url("../svg/ui/compass.svg"); }
+.ios-icon-map { --ios-icon: url("../svg/ui/map.svg"); }
+.ios-icon-map-pin { --ios-icon: url("../svg/ui/map-pin.svg"); }
+.ios-icon-globe { --ios-icon: url("../svg/ui/globe.svg"); }
+
+/* ── ARROWS ─────────────────── */
+.ios-icon-arrow-up { --ios-icon: url("../svg/arrows/arrow-up.svg"); }
+.ios-icon-arrow-down { --ios-icon: url("../svg/arrows/arrow-down.svg"); }
+.ios-icon-arrow-left { --ios-icon: url("../svg/arrows/arrow-left.svg"); }
+.ios-icon-arrow-right { --ios-icon: url("../svg/arrows/arrow-right.svg"); }
+.ios-icon-arrow-up-right { --ios-icon: url("../svg/arrows/arrow-up-right.svg"); }
+.ios-icon-arrow-up-left { --ios-icon: url("../svg/arrows/arrow-up-left.svg"); }
+.ios-icon-arrow-down-right { --ios-icon: url("../svg/arrows/arrow-down-right.svg"); }
+.ios-icon-arrow-down-left { --ios-icon: url("../svg/arrows/arrow-down-left.svg"); }
+.ios-icon-chevron-up { --ios-icon: url("../svg/arrows/chevron-up.svg"); }
+.ios-icon-chevron-down { --ios-icon: url("../svg/arrows/chevron-down.svg"); }
+.ios-icon-chevron-left { --ios-icon: url("../svg/arrows/chevron-left.svg"); }
+.ios-icon-chevron-right { --ios-icon: url("../svg/arrows/chevron-right.svg"); }
+.ios-icon-chevrons-up { --ios-icon: url("../svg/arrows/chevrons-up.svg"); }
+.ios-icon-chevrons-down { --ios-icon: url("../svg/arrows/chevrons-down.svg"); }
+.ios-icon-chevrons-left { --ios-icon: url("../svg/arrows/chevrons-left.svg"); }
+.ios-icon-chevrons-right { --ios-icon: url("../svg/arrows/chevrons-right.svg"); }
+.ios-icon-corner-up-left { --ios-icon: url("../svg/arrows/corner-up-left.svg"); }
+.ios-icon-corner-up-right { --ios-icon: url("../svg/arrows/corner-up-right.svg"); }
+.ios-icon-move { --ios-icon: url("../svg/arrows/move.svg"); }
+.ios-icon-maximize { --ios-icon: url("../svg/arrows/maximize.svg"); }
+.ios-icon-minimize { --ios-icon: url("../svg/arrows/minimize.svg"); }
+.ios-icon-expand { --ios-icon: url("../svg/arrows/expand.svg"); }
+.ios-icon-collapse { --ios-icon: url("../svg/arrows/collapse.svg"); }
+
+/* ── COMMUNICATION ─────────────────── */
+.ios-icon-mail { --ios-icon: url("../svg/communication/mail.svg"); }
+.ios-icon-mail-open { --ios-icon: url("../svg/communication/mail-open.svg"); }
+.ios-icon-send { --ios-icon: url("../svg/communication/send.svg"); }
+.ios-icon-message { --ios-icon: url("../svg/communication/message.svg"); }
+.ios-icon-message-circle { --ios-icon: url("../svg/communication/message-circle.svg"); }
+.ios-icon-message-square { --ios-icon: url("../svg/communication/message-square.svg"); }
+.ios-icon-phone { --ios-icon: url("../svg/communication/phone.svg"); }
+.ios-icon-phone-call { --ios-icon: url("../svg/communication/phone-call.svg"); }
+.ios-icon-phone-off { --ios-icon: url("../svg/communication/phone-off.svg"); }
+.ios-icon-bell { --ios-icon: url("../svg/communication/bell.svg"); }
+.ios-icon-bell-off { --ios-icon: url("../svg/communication/bell-off.svg"); }
+.ios-icon-bell-ring { --ios-icon: url("../svg/communication/bell-ring.svg"); }
+.ios-icon-at-sign { --ios-icon: url("../svg/communication/at-sign.svg"); }
+.ios-icon-hash { --ios-icon: url("../svg/communication/hash.svg"); }
+.ios-icon-rss { --ios-icon: url("../svg/communication/rss.svg"); }
+
+/* ── MEDIA ─────────────────── */
+.ios-icon-play { --ios-icon: url("../svg/media/play.svg"); }
+.ios-icon-play-fill { --ios-icon: url("../svg/media/play-fill.svg"); }
+.ios-icon-pause { --ios-icon: url("../svg/media/pause.svg"); }
+.ios-icon-stop { --ios-icon: url("../svg/media/stop.svg"); }
+.ios-icon-skip-back { --ios-icon: url("../svg/media/skip-back.svg"); }
+.ios-icon-skip-forward { --ios-icon: url("../svg/media/skip-forward.svg"); }
+.ios-icon-rewind { --ios-icon: url("../svg/media/rewind.svg"); }
+.ios-icon-fast-forward { --ios-icon: url("../svg/media/fast-forward.svg"); }
+.ios-icon-volume { --ios-icon: url("../svg/media/volume.svg"); }
+.ios-icon-volume-1 { --ios-icon: url("../svg/media/volume-1.svg"); }
+.ios-icon-volume-2 { --ios-icon: url("../svg/media/volume-2.svg"); }
+.ios-icon-volume-x { --ios-icon: url("../svg/media/volume-x.svg"); }
+.ios-icon-mic { --ios-icon: url("../svg/media/mic.svg"); }
+.ios-icon-mic-off { --ios-icon: url("../svg/media/mic-off.svg"); }
+.ios-icon-camera { --ios-icon: url("../svg/media/camera.svg"); }
+.ios-icon-camera-off { --ios-icon: url("../svg/media/camera-off.svg"); }
+.ios-icon-image { --ios-icon: url("../svg/media/image.svg"); }
+.ios-icon-film { --ios-icon: url("../svg/media/film.svg"); }
+.ios-icon-music { --ios-icon: url("../svg/media/music.svg"); }
+.ios-icon-headphones { --ios-icon: url("../svg/media/headphones.svg"); }
+.ios-icon-radio { --ios-icon: url("../svg/media/radio.svg"); }
+.ios-icon-tv { --ios-icon: url("../svg/media/tv.svg"); }
+.ios-icon-youtube { --ios-icon: url("../svg/media/youtube.svg"); }
+
+/* ── FILES ─────────────────── */
+.ios-icon-file { --ios-icon: url("../svg/files/file.svg"); }
+.ios-icon-file-text { --ios-icon: url("../svg/files/file-text.svg"); }
+.ios-icon-file-plus { --ios-icon: url("../svg/files/file-plus.svg"); }
+.ios-icon-file-minus { --ios-icon: url("../svg/files/file-minus.svg"); }
+.ios-icon-file-x { --ios-icon: url("../svg/files/file-x.svg"); }
+.ios-icon-file-check { --ios-icon: url("../svg/files/file-check.svg"); }
+.ios-icon-folder { --ios-icon: url("../svg/files/folder.svg"); }
+.ios-icon-folder-open { --ios-icon: url("../svg/files/folder-open.svg"); }
+.ios-icon-folder-plus { --ios-icon: url("../svg/files/folder-plus.svg"); }
+.ios-icon-archive { --ios-icon: url("../svg/files/archive.svg"); }
+.ios-icon-book { --ios-icon: url("../svg/files/book.svg"); }
+.ios-icon-book-open { --ios-icon: url("../svg/files/book-open.svg"); }
+.ios-icon-bookmark { --ios-icon: url("../svg/files/bookmark.svg"); }
+.ios-icon-bookmark-fill { --ios-icon: url("../svg/files/bookmark-fill.svg"); }
+.ios-icon-paperclip { --ios-icon: url("../svg/files/paperclip.svg"); }
+.ios-icon-scissors { --ios-icon: url("../svg/files/scissors.svg"); }
+.ios-icon-tag { --ios-icon: url("../svg/files/tag.svg"); }
+.ios-icon-tags { --ios-icon: url("../svg/files/tags.svg"); }
+
+/* ── USERS ─────────────────── */
+.ios-icon-user { --ios-icon: url("../svg/users/user.svg"); }
+.ios-icon-user-plus { --ios-icon: url("../svg/users/user-plus.svg"); }
+.ios-icon-user-minus { --ios-icon: url("../svg/users/user-minus.svg"); }
+.ios-icon-user-x { --ios-icon: url("../svg/users/user-x.svg"); }
+.ios-icon-user-check { --ios-icon: url("../svg/users/user-check.svg"); }
+.ios-icon-users { --ios-icon: url("../svg/users/users.svg"); }
+.ios-icon-user-shield { --ios-icon: url("../svg/users/user-shield.svg"); }
+.ios-icon-user-cog { --ios-icon: url("../svg/users/user-cog.svg"); }
+.ios-icon-heart { --ios-icon: url("../svg/users/heart.svg"); }
+.ios-icon-heart-fill { --ios-icon: url("../svg/users/heart-fill.svg"); }
+.ios-icon-star { --ios-icon: url("../svg/users/star.svg"); }
+.ios-icon-star-fill { --ios-icon: url("../svg/users/star-fill.svg"); }
+.ios-icon-award { --ios-icon: url("../svg/users/award.svg"); }
+.ios-icon-thumbs-up { --ios-icon: url("../svg/users/thumbs-up.svg"); }
+.ios-icon-thumbs-down { --ios-icon: url("../svg/users/thumbs-down.svg"); }
+.ios-icon-smile { --ios-icon: url("../svg/users/smile.svg"); }
+.ios-icon-frown { --ios-icon: url("../svg/users/frown.svg"); }
+.ios-icon-meh { --ios-icon: url("../svg/users/meh.svg"); }
+
+/* ── COMMERCE ─────────────────── */
+.ios-icon-shopping-cart { --ios-icon: url("../svg/commerce/shopping-cart.svg"); }
+.ios-icon-shopping-bag { --ios-icon: url("../svg/commerce/shopping-bag.svg"); }
+.ios-icon-credit-card { --ios-icon: url("../svg/commerce/credit-card.svg"); }
+.ios-icon-dollar-sign { --ios-icon: url("../svg/commerce/dollar-sign.svg"); }
+.ios-icon-percent { --ios-icon: url("../svg/commerce/percent.svg"); }
+.ios-icon-trending-up { --ios-icon: url("../svg/commerce/trending-up.svg"); }
+.ios-icon-trending-down { --ios-icon: url("../svg/commerce/trending-down.svg"); }
+.ios-icon-bar-chart { --ios-icon: url("../svg/commerce/bar-chart.svg"); }
+.ios-icon-bar-chart-2 { --ios-icon: url("../svg/commerce/bar-chart-2.svg"); }
+.ios-icon-pie-chart { --ios-icon: url("../svg/commerce/pie-chart.svg"); }
+.ios-icon-activity { --ios-icon: url("../svg/commerce/activity.svg"); }
+.ios-icon-package { --ios-icon: url("../svg/commerce/package.svg"); }
+.ios-icon-gift { --ios-icon: url("../svg/commerce/gift.svg"); }
+.ios-icon-truck { --ios-icon: url("../svg/commerce/truck.svg"); }
+.ios-icon-box { --ios-icon: url("../svg/commerce/box.svg"); }
+.ios-icon-layers { --ios-icon: url("../svg/commerce/layers.svg"); }
+
+/* ── ENERGY ─────────────────── */
+.ios-icon-solar { --ios-icon: url("../svg/energy/solar.svg"); }
+.ios-icon-sun { --ios-icon: url("../svg/energy/sun.svg"); }
+.ios-icon-sun-dim { --ios-icon: url("../svg/energy/sun-dim.svg"); }
+.ios-icon-moon { --ios-icon: url("../svg/energy/moon.svg"); }
+.ios-icon-cloud { --ios-icon: url("../svg/energy/cloud.svg"); }
+.ios-icon-cloud-rain { --ios-icon: url("../svg/energy/cloud-rain.svg"); }
+.ios-icon-cloud-sun { --ios-icon: url("../svg/energy/cloud-sun.svg"); }
+.ios-icon-bolt { --ios-icon: url("../svg/energy/bolt.svg"); }
+.ios-icon-zap { --ios-icon: url("../svg/energy/zap.svg"); }
+.ios-icon-zap-off { --ios-icon: url("../svg/energy/zap-off.svg"); }
+.ios-icon-battery { --ios-icon: url("../svg/energy/battery.svg"); }
+.ios-icon-battery-charging { --ios-icon: url("../svg/energy/battery-charging.svg"); }
+.ios-icon-battery-full { --ios-icon: url("../svg/energy/battery-full.svg"); }
+.ios-icon-battery-low { --ios-icon: url("../svg/energy/battery-low.svg"); }
+.ios-icon-plug { --ios-icon: url("../svg/energy/plug.svg"); }
+.ios-icon-plug-2 { --ios-icon: url("../svg/energy/plug-2.svg"); }
+.ios-icon-power { --ios-icon: url("../svg/energy/power.svg"); }
+.ios-icon-power-off { --ios-icon: url("../svg/energy/power-off.svg"); }
+.ios-icon-wind { --ios-icon: url("../svg/energy/wind.svg"); }
+.ios-icon-thermometer { --ios-icon: url("../svg/energy/thermometer.svg"); }
+.ios-icon-droplet { --ios-icon: url("../svg/energy/droplet.svg"); }
+.ios-icon-waves { --ios-icon: url("../svg/energy/waves.svg"); }
+.ios-icon-ev-charger { --ios-icon: url("../svg/energy/ev-charger.svg"); }
+.ios-icon-ev-car { --ios-icon: url("../svg/energy/ev-car.svg"); }
+.ios-icon-factory { --ios-icon: url("../svg/energy/factory.svg"); }
+.ios-icon-warehouse { --ios-icon: url("../svg/energy/warehouse.svg"); }
+.ios-icon-leaf { --ios-icon: url("../svg/energy/leaf.svg"); }
+.ios-icon-tree { --ios-icon: url("../svg/energy/tree.svg"); }
+.ios-icon-seedling { --ios-icon: url("../svg/energy/seedling.svg"); }
+
+/* ── TECH ─────────────────── */
+.ios-icon-cpu { --ios-icon: url("../svg/tech/cpu.svg"); }
+.ios-icon-code { --ios-icon: url("../svg/tech/code.svg"); }
+.ios-icon-code-2 { --ios-icon: url("../svg/tech/code-2.svg"); }
+.ios-icon-terminal { --ios-icon: url("../svg/tech/terminal.svg"); }
+.ios-icon-server { --ios-icon: url("../svg/tech/server.svg"); }
+.ios-icon-database { --ios-icon: url("../svg/tech/database.svg"); }
+.ios-icon-hard-drive { --ios-icon: url("../svg/tech/hard-drive.svg"); }
+.ios-icon-monitor { --ios-icon: url("../svg/tech/monitor.svg"); }
+.ios-icon-smartphone { --ios-icon: url("../svg/tech/smartphone.svg"); }
+.ios-icon-tablet { --ios-icon: url("../svg/tech/tablet.svg"); }
+.ios-icon-laptop { --ios-icon: url("../svg/tech/laptop.svg"); }
+.ios-icon-wifi { --ios-icon: url("../svg/tech/wifi.svg"); }
+.ios-icon-wifi-off { --ios-icon: url("../svg/tech/wifi-off.svg"); }
+.ios-icon-bluetooth { --ios-icon: url("../svg/tech/bluetooth.svg"); }
+.ios-icon-cloud-upload { --ios-icon: url("../svg/tech/cloud-upload.svg"); }
+.ios-icon-cloud-download { --ios-icon: url("../svg/tech/cloud-download.svg"); }
+.ios-icon-git-branch { --ios-icon: url("../svg/tech/git-branch.svg"); }
+.ios-icon-git-commit { --ios-icon: url("../svg/tech/git-commit.svg"); }
+.ios-icon-git-merge { --ios-icon: url("../svg/tech/git-merge.svg"); }
+.ios-icon-git-pull-request { --ios-icon: url("../svg/tech/git-pull-request.svg"); }
+.ios-icon-github { --ios-icon: url("../svg/tech/github.svg"); }
+.ios-icon-npm { --ios-icon: url("../svg/tech/npm.svg"); }
+.ios-icon-layers-3 { --ios-icon: url("../svg/tech/layers-3.svg"); }
+.ios-icon-api { --ios-icon: url("../svg/tech/api.svg"); }
+.ios-icon-webhook { --ios-icon: url("../svg/tech/webhook.svg"); }
+
+/* ── SECURITY ─────────────────── */
+.ios-icon-lock { --ios-icon: url("../svg/security/lock.svg"); }
+.ios-icon-unlock { --ios-icon: url("../svg/security/unlock.svg"); }
+.ios-icon-eye { --ios-icon: url("../svg/security/eye.svg"); }
+.ios-icon-eye-off { --ios-icon: url("../svg/security/eye-off.svg"); }
+.ios-icon-shield { --ios-icon: url("../svg/security/shield.svg"); }
+.ios-icon-shield-check { --ios-icon: url("../svg/security/shield-check.svg"); }
+.ios-icon-shield-off { --ios-icon: url("../svg/security/shield-off.svg"); }
+.ios-icon-key { --ios-icon: url("../svg/security/key.svg"); }
+.ios-icon-fingerprint { --ios-icon: url("../svg/security/fingerprint.svg"); }
+.ios-icon-alert-triangle { --ios-icon: url("../svg/security/alert-triangle.svg"); }
+.ios-icon-alert-circle { --ios-icon: url("../svg/security/alert-circle.svg"); }
+.ios-icon-alert-octagon { --ios-icon: url("../svg/security/alert-octagon.svg"); }
+
+/* ── TIME ─────────────────── */
+.ios-icon-clock { --ios-icon: url("../svg/time/clock.svg"); }
+.ios-icon-clock-fill { --ios-icon: url("../svg/time/clock-fill.svg"); }
+.ios-icon-calendar { --ios-icon: url("../svg/time/calendar.svg"); }
+.ios-icon-calendar-check { --ios-icon: url("../svg/time/calendar-check.svg"); }
+.ios-icon-calendar-plus { --ios-icon: url("../svg/time/calendar-plus.svg"); }
+.ios-icon-calendar-x { --ios-icon: url("../svg/time/calendar-x.svg"); }
+.ios-icon-calendar-range { --ios-icon: url("../svg/time/calendar-range.svg"); }
+.ios-icon-timer { --ios-icon: url("../svg/time/timer.svg"); }
+.ios-icon-alarm-clock { --ios-icon: url("../svg/time/alarm-clock.svg"); }
+.ios-icon-hourglass { --ios-icon: url("../svg/time/hourglass.svg"); }
+.ios-icon-watch { --ios-icon: url("../svg/time/watch.svg"); }
+
+/* ── ESG ─────────────────── */
+.ios-icon-recycle { --ios-icon: url("../svg/esg/recycle.svg"); }
+.ios-icon-globe-2 { --ios-icon: url("../svg/esg/globe-2.svg"); }
+.ios-icon-sprout { --ios-icon: url("../svg/esg/sprout.svg"); }
+.ios-icon-sun-medium { --ios-icon: url("../svg/esg/sun-medium.svg"); }
+.ios-icon-carbon { --ios-icon: url("../svg/esg/carbon.svg"); }
+.ios-icon-net-zero { --ios-icon: url("../svg/esg/net-zero.svg"); }
+.ios-icon-forest { --ios-icon: url("../svg/esg/forest.svg"); }
+.ios-icon-co2 { --ios-icon: url("../svg/esg/co2.svg"); }
+
+/* ── MISC ─────────────────── */
+.ios-icon-flag { --ios-icon: url("../svg/misc/flag.svg"); }
+.ios-icon-flag-fill { --ios-icon: url("../svg/misc/flag-fill.svg"); }
+.ios-icon-target { --ios-icon: url("../svg/misc/target.svg"); }
+.ios-icon-crosshair { --ios-icon: url("../svg/misc/crosshair.svg"); }
+.ios-icon-hexagon { --ios-icon: url("../svg/misc/hexagon.svg"); }
+.ios-icon-octagon { --ios-icon: url("../svg/misc/octagon.svg"); }
+.ios-icon-triangle { --ios-icon: url("../svg/misc/triangle.svg"); }
+.ios-icon-circle { --ios-icon: url("../svg/misc/circle.svg"); }
+.ios-icon-square { --ios-icon: url("../svg/misc/square.svg"); }
+.ios-icon-dot { --ios-icon: url("../svg/misc/dot.svg"); }
+.ios-icon-layout { --ios-icon: url("../svg/misc/layout.svg"); }
+.ios-icon-sidebar { --ios-icon: url("../svg/misc/sidebar.svg"); }
+.ios-icon-columns { --ios-icon: url("../svg/misc/columns.svg"); }
+.ios-icon-rows { --ios-icon: url("../svg/misc/rows.svg"); }
+.ios-icon-panel-left { --ios-icon: url("../svg/misc/panel-left.svg"); }
+.ios-icon-panel-right { --ios-icon: url("../svg/misc/panel-right.svg"); }
+.ios-icon-zoom-in { --ios-icon: url("../svg/misc/zoom-in.svg"); }
+.ios-icon-zoom-out { --ios-icon: url("../svg/misc/zoom-out.svg"); }
+.ios-icon-sun-snooze { --ios-icon: url("../svg/misc/sun-snooze.svg"); }
+.ios-icon-sparkle { --ios-icon: url("../svg/misc/sparkle.svg"); }
+.ios-icon-wand { --ios-icon: url("../svg/misc/wand.svg"); }
+.ios-icon-magic { --ios-icon: url("../svg/misc/magic.svg"); }

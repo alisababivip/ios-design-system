@@ -1,0 +1,183 @@
+/* ============================================================
+   iOS Badge & Tag
+   Variants: label · count · dot · status · notification
+   ============================================================ */
+
+/* ── Base Badge ─────────────────────────────────────────────── */
+.ios-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: var(--ios-radius-full);
+  font-family: var(--ios-font);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+  /* Default: gray */
+  background: var(--ios-system-gray5);
+  color: var(--ios-label-secondary);
+}
+
+/* ── Color variants ─────────────────────────────────────────── */
+.ios-badge--blue   { background: rgba(0,122,255,0.12);   color: var(--ios-system-blue); }
+.ios-badge--green  { background: rgba(52,199,89,0.12);   color: var(--ios-system-green); }
+.ios-badge--orange { background: rgba(255,149,0,0.12);   color: var(--ios-system-orange); }
+.ios-badge--red    { background: rgba(255,59,48,0.12);   color: var(--ios-system-red); }
+.ios-badge--purple { background: rgba(175,82,222,0.12);  color: var(--ios-system-purple); }
+.ios-badge--indigo { background: rgba(88,86,214,0.12);   color: var(--ios-system-indigo); }
+.ios-badge--teal   { background: rgba(90,200,250,0.16);  color: var(--ios-system-teal); }
+.ios-badge--yellow { background: rgba(255,204,0,0.16);   color: #7a5500; }
+
+/* Filled solid variants */
+.ios-badge--blue-solid   { background: var(--ios-system-blue);   color: #fff; }
+.ios-badge--green-solid  { background: var(--ios-system-green);  color: #fff; }
+.ios-badge--orange-solid { background: var(--ios-system-orange); color: #fff; }
+.ios-badge--red-solid    { background: var(--ios-system-red);    color: #fff; }
+.ios-badge--purple-solid { background: var(--ios-system-purple); color: #fff; }
+
+/* ── Size variants ──────────────────────────────────────────── */
+.ios-badge--sm { font-size: 10px; padding: 1px 6px; }
+.ios-badge--lg { font-size: 13px; padding: 3px 10px; }
+
+/* ── Count badge (số thông báo) ─────────────────────────────── */
+/*
+  Usage: <span class="ios-badge-count">3</span>
+         <span class="ios-badge-count ios-badge-count--red">99+</span>
+*/
+.ios-badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-red);
+  color: #ffffff;
+  font-family: var(--ios-font);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ios-badge-count--blue   { background: var(--ios-system-blue); }
+.ios-badge-count--green  { background: var(--ios-system-green); }
+.ios-badge-count--orange { background: var(--ios-system-orange); }
+.ios-badge-count--gray   { background: var(--ios-system-gray3); color: var(--ios-label-primary); }
+
+/* Size sm/lg */
+.ios-badge-count--sm { min-width: 14px; height: 14px; font-size: 9px; padding: 0 4px; }
+.ios-badge-count--lg { min-width: 22px; height: 22px; font-size: 13px; padding: 0 7px; }
+
+/* ── Dot badge (chấm trạng thái nhỏ) ───────────────────────── */
+/*
+  Usage:
+    <span class="ios-badge-dot ios-badge-dot--green"></span>
+    Đang hoạt động
+*/
+.ios-badge-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-gray3);
+  flex-shrink: 0;
+}
+.ios-badge-dot--green  { background: var(--ios-system-green); }
+.ios-badge-dot--blue   { background: var(--ios-system-blue); }
+.ios-badge-dot--orange { background: var(--ios-system-orange); }
+.ios-badge-dot--red    { background: var(--ios-system-red); }
+.ios-badge-dot--yellow { background: var(--ios-system-yellow); }
+.ios-badge-dot--gray   { background: var(--ios-system-gray3); }
+
+/* Dot pulse animation (live indicator) */
+.ios-badge-dot--pulse {
+  animation: ios-badge-pulse 2s var(--ios-ease-smooth) infinite;
+}
+@keyframes ios-badge-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+/* ── Tag (label với icon tuỳ chọn) ──────────────────────────── */
+/*
+  Usage:
+    <span class="ios-tag">NLP Energy</span>
+    <span class="ios-tag ios-tag--green">
+      <span class="ios-tag__dot"></span> Live
+    </span>
+*/
+.ios-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--ios-radius-sm);
+  border: 1px solid var(--ios-separator);
+  background: var(--ios-fill-quaternary);
+  font-family: var(--ios-font);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ios-label-secondary);
+  white-space: nowrap;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ios-tag--blue   { border-color: rgba(0,122,255,0.3);   background: rgba(0,122,255,0.08);   color: var(--ios-system-blue); }
+.ios-tag--green  { border-color: rgba(52,199,89,0.3);   background: rgba(52,199,89,0.08);   color: var(--ios-system-green); }
+.ios-tag--orange { border-color: rgba(255,149,0,0.3);   background: rgba(255,149,0,0.08);   color: var(--ios-system-orange); }
+.ios-tag--red    { border-color: rgba(255,59,48,0.3);   background: rgba(255,59,48,0.08);   color: var(--ios-system-red); }
+.ios-tag--purple { border-color: rgba(175,82,222,0.3);  background: rgba(175,82,222,0.08);  color: var(--ios-system-purple); }
+
+.ios-tag__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--ios-radius-full);
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* ── Notification overlay (trên icon/avatar) ────────────────── */
+/*
+  Usage:
+    <div class="ios-notif-wrap">
+      <button>🔔</button>
+      <span class="ios-notif-dot"></span>
+    </div>
+*/
+.ios-notif-wrap {
+  position: relative;
+  display: inline-flex;
+}
+.ios-notif-dot {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 8px;
+  height: 8px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-red);
+  border: 1.5px solid var(--ios-bg-primary);
+}
+.ios-notif-count {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: var(--ios-radius-full);
+  background: var(--ios-system-red);
+  border: 1.5px solid var(--ios-bg-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

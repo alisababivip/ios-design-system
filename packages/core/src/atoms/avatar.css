@@ -1,0 +1,163 @@
+/* ============================================================
+   iOS Avatar & Profile
+   Shapes: Circle · Squircle · Rounded Rect
+   Sizes:  xs(24) · sm(32) · md(40) · lg(56) · xl(80) · 2xl(120)
+   ============================================================ */
+
+/* ── Base ───────────────────────────────────────────────────── */
+.ios-avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: var(--ios-system-gray5);
+  color: var(--ios-label-primary);
+  font-family: var(--ios-font);
+  font-weight: 600;
+  user-select: none;
+  /* Default: circle, md size */
+  width: 40px;
+  height: 40px;
+  border-radius: var(--ios-radius-full);
+  font-size: 16px;
+}
+
+.ios-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Sizes ──────────────────────────────────────────────────── */
+.ios-avatar--xs  { width: 24px;  height: 24px;  font-size: 9px;  }
+.ios-avatar--sm  { width: 32px;  height: 32px;  font-size: 12px; }
+.ios-avatar--md  { width: 40px;  height: 40px;  font-size: 16px; }
+.ios-avatar--lg  { width: 56px;  height: 56px;  font-size: 22px; }
+.ios-avatar--xl  { width: 80px;  height: 80px;  font-size: 32px; }
+.ios-avatar--2xl { width: 120px; height: 120px; font-size: 48px; }
+
+/* ── Shapes ─────────────────────────────────────────────────── */
+/* Circle (default) */
+.ios-avatar--circle { border-radius: var(--ios-radius-full); }
+
+/* Squircle — Apple superellipse R≈22.37% */
+.ios-avatar--squircle {
+  border-radius: 0;
+  clip-path: path("M 50,0 C 77.6,0 100,22.4 100,50 C 100,77.6 77.6,100 50,100 C 22.4,100 0,77.6 0,50 C 0,22.4 22.4,0 50,0 Z");
+  /* Fallback cho browser không hỗ trợ path clip-path */
+  border-radius: 27.5%;
+}
+
+/* Rounded Rect */
+.ios-avatar--rounded { border-radius: var(--ios-radius-lg); }
+.ios-avatar--xs.ios-avatar--rounded  { border-radius: var(--ios-radius-xs); }
+.ios-avatar--sm.ios-avatar--rounded  { border-radius: var(--ios-radius-sm); }
+.ios-avatar--md.ios-avatar--rounded  { border-radius: var(--ios-radius-md); }
+.ios-avatar--lg.ios-avatar--rounded  { border-radius: var(--ios-radius-lg); }
+.ios-avatar--xl.ios-avatar--rounded  { border-radius: var(--ios-radius-xl); }
+.ios-avatar--2xl.ios-avatar--rounded { border-radius: 32px; }
+
+/* ── Color variants (initials / icon background) ────────────── */
+.ios-avatar--blue   { background: var(--ios-system-blue);   color: #fff; }
+.ios-avatar--green  { background: var(--ios-system-green);  color: #fff; }
+.ios-avatar--indigo { background: var(--ios-system-indigo); color: #fff; }
+.ios-avatar--orange { background: var(--ios-system-orange); color: #fff; }
+.ios-avatar--pink   { background: var(--ios-system-pink);   color: #fff; }
+.ios-avatar--purple { background: var(--ios-system-purple); color: #fff; }
+.ios-avatar--red    { background: var(--ios-system-red);    color: #fff; }
+.ios-avatar--teal   { background: var(--ios-system-teal);   color: #fff; }
+.ios-avatar--yellow { background: var(--ios-system-yellow); color: #1f2328; }
+.ios-avatar--gray   { background: var(--ios-system-gray4);  color: var(--ios-label-primary); }
+
+/* ── Border ring ────────────────────────────────────────────── */
+.ios-avatar--ring {
+  box-shadow: 0 0 0 2px var(--ios-bg-primary), 0 0 0 4px var(--ios-system-blue);
+}
+.ios-avatar--ring-white {
+  box-shadow: 0 0 0 3px #ffffff;
+}
+
+/* ── Status Badge overlay ───────────────────────────────────── */
+.ios-avatar-wrap {
+  position: relative;
+  display: inline-flex;
+  flex-shrink: 0;
+}
+
+.ios-avatar-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--ios-radius-full);
+  border: 2px solid var(--ios-bg-primary);
+  background: var(--ios-system-gray3);
+}
+/* Badge sizes proportional to avatar */
+.ios-avatar--xs  ~ .ios-avatar-badge,
+.ios-avatar-wrap:has(.ios-avatar--xs) .ios-avatar-badge  { width: 8px;  height: 8px;  border-width: 1.5px; }
+.ios-avatar--sm  ~ .ios-avatar-badge,
+.ios-avatar-wrap:has(.ios-avatar--sm) .ios-avatar-badge  { width: 10px; height: 10px; }
+.ios-avatar--lg  ~ .ios-avatar-badge,
+.ios-avatar-wrap:has(.ios-avatar--lg) .ios-avatar-badge  { width: 14px; height: 14px; border-width: 2.5px; }
+.ios-avatar--xl  ~ .ios-avatar-badge,
+.ios-avatar-wrap:has(.ios-avatar--xl) .ios-avatar-badge  { width: 18px; height: 18px; border-width: 3px; }
+.ios-avatar--2xl ~ .ios-avatar-badge,
+.ios-avatar-wrap:has(.ios-avatar--2xl) .ios-avatar-badge { width: 24px; height: 24px; border-width: 3px; }
+
+/* Status colors */
+.ios-avatar-badge--online  { background: var(--ios-system-green); }
+.ios-avatar-badge--away    { background: var(--ios-system-yellow); }
+.ios-avatar-badge--busy    { background: var(--ios-system-red); }
+.ios-avatar-badge--offline { background: var(--ios-system-gray3); }
+
+/* Verified badge (checkmark) */
+.ios-avatar-badge--verified {
+  background: var(--ios-system-blue);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 7px; color: #fff;
+}
+.ios-avatar-badge--verified::after { content: "✓"; }
+
+/* ── Group stack ────────────────────────────────────────────── */
+/*
+  Usage:
+    <div class="ios-avatar-group">
+      <div class="ios-avatar-wrap"><img class="ios-avatar" .../></div>
+      <div class="ios-avatar-wrap"><img class="ios-avatar" .../></div>
+      <div class="ios-avatar-wrap"><img class="ios-avatar" .../></div>
+      <div class="ios-avatar ios-avatar--gray ios-avatar--more">+5</div>
+    </div>
+*/
+.ios-avatar-group {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.ios-avatar-group .ios-avatar-wrap,
+.ios-avatar-group .ios-avatar {
+  margin-left: -10px;
+  box-shadow: 0 0 0 2px var(--ios-bg-primary);
+  transition: transform var(--ios-duration-fast) var(--ios-ease-smooth);
+}
+.ios-avatar-group .ios-avatar-wrap:last-child,
+.ios-avatar-group .ios-avatar:last-child { margin-left: 0; }
+
+.ios-avatar-group:hover .ios-avatar-wrap,
+.ios-avatar-group:hover .ios-avatar { transform: translateX(-4px); }
+.ios-avatar-group:hover .ios-avatar-wrap:last-child,
+.ios-avatar-group:hover .ios-avatar:last-child { transform: none; }
+
+.ios-avatar--more {
+  font-size: 11px;
+  font-weight: 700;
+  background: var(--ios-system-gray5);
+  color: var(--ios-label-secondary);
+  letter-spacing: -0.5px;
+}
