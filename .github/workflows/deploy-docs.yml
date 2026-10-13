@@ -35,7 +35,7 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build VitePress
-        run: pnpm --filter @nlpgroup/docs run build
+        run: pnpm --filter @alisababivip/docs run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,4 +1,4 @@
-// @nlpgroup/icons — Auto-generated index
+// @alisababivip/icons — Auto-generated index
 // Total: 272 icons
 
 export type IconName =

@@ -1,5 +1,5 @@
 {
-  "name": "@nlpgroup/core",
+  "name": "@alisababivip/core",
   "version": "0.1.0",
   "description": "Web Components (Custom Elements) chuẩn iOS HIG — framework-agnostic",
   "repository": "https://github.com/alisababivip/ios-design-system.git",
@@ -28,8 +28,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@nlpgroup/tokens": "workspace:*",
-    "@nlpgroup/icons": "workspace:*"
+    "@alisababivip/tokens": "workspace:*",
+    "@alisababivip/icons": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^5.0.7",

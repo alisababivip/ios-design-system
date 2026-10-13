@@ -10,15 +10,15 @@
 ::: code-group
 
 ```bash [pnpm]
-pnpm add @nlpgroup/tokens @nlpgroup/core
+pnpm add @alisababivip/tokens @alisababivip/core
 ```
 
 ```bash [npm]
-npm install @nlpgroup/tokens @nlpgroup/core
+npm install @alisababivip/tokens @alisababivip/core
 ```
 
 ```bash [yarn]
-yarn add @nlpgroup/tokens @nlpgroup/core
+yarn add @alisababivip/tokens @alisababivip/core
 ```
 
 :::
@@ -28,34 +28,34 @@ yarn add @nlpgroup/tokens @nlpgroup/core
 ### Toàn bộ bundle
 
 ```html
-<link rel="stylesheet" href="node_modules/@nlpgroup/core/dist/ios-ui.css" />
+<link rel="stylesheet" href="node_modules/@alisababivip/core/dist/ios-ui.css" />
 ```
 
 ### Chỉ Tokens
 
 ```css
-@import '@nlpgroup/tokens';
+@import '@alisababivip/tokens';
 ```
 
 ### Chỉ Controls
 
 ```css
-@import '@nlpgroup/tokens';
-@import '@nlpgroup/core/dist/controls/index.css';
+@import '@alisababivip/tokens';
+@import '@alisababivip/core/dist/controls/index.css';
 ```
 
 ## Vue 3
 
 ```bash
-pnpm add @nlpgroup/vue
+pnpm add @alisababivip/vue
 ```
 
 ```ts
 // main.ts
 import { createApp } from 'vue'
-import '@nlpgroup/tokens'
-import '@nlpgroup/core/dist/ios-ui.css'
-import NlpUI from '@nlpgroup/vue'
+import '@alisababivip/tokens'
+import '@alisababivip/core/dist/ios-ui.css'
+import NlpUI from '@alisababivip/vue'
 import App from './App.vue'
 
 createApp(App).use(NlpUI).mount('#app')
@@ -64,10 +64,10 @@ createApp(App).use(NlpUI).mount('#app')
 ## React / Next.js
 
 ```bash
-pnpm add @nlpgroup/react
+pnpm add @alisababivip/react
 ```
 
 ```tsx
 // app/layout.tsx (Next.js App Router)
-import '@nlpgroup/core/dist/ios-ui.css'
+import '@alisababivip/core/dist/ios-ui.css'
 ```

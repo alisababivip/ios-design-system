@@ -1,5 +1,5 @@
 {
-  "name": "@nlpgroup/react",
+  "name": "@alisababivip/react",
   "version": "0.1.0",
   "description": "React / Next.js wrapper components cho iOS Design System",
   "repository": "https://github.com/alisababivip/ios-design-system.git",
@@ -29,8 +29,8 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "@nlpgroup/tokens": "workspace:*",
-    "@nlpgroup/core": "workspace:*"
+    "@alisababivip/tokens": "workspace:*",
+    "@alisababivip/core": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

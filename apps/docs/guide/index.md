@@ -1,6 +1,6 @@
 # Giới thiệu
 
-**@nlpgroup/ios-ui** là bộ thư viện thiết kế mã nguồn mở theo chuẩn **Apple Human Interface Guidelines (HIG)**, xây dựng cho hệ sinh thái **NLP Group**.
+**@alisababivip/ios-ui** là bộ thư viện thiết kế mã nguồn mở theo chuẩn **Apple Human Interface Guidelines (HIG)**, xây dựng cho hệ sinh thái **NLP Group**.
 
 ## Hệ sinh thái NLP Group
 
@@ -25,9 +25,9 @@
 
 | Package | Mô tả |
 |---|---|
-| `@nlpgroup/tokens` | CSS Variables + JSON design tokens |
-| `@nlpgroup/icons` | SVG icons + SF Symbols + animations |
-| `@nlpgroup/core` | Web Components CSS (framework-agnostic) |
-| `@nlpgroup/vue` | Vue 3 wrapper components |
-| `@nlpgroup/react` | React wrapper components |
-| `@nlpgroup/blade` | Laravel Blade bridge |
+| `@alisababivip/tokens` | CSS Variables + JSON design tokens |
+| `@alisababivip/icons` | SVG icons + SF Symbols + animations |
+| `@alisababivip/core` | Web Components CSS (framework-agnostic) |
+| `@alisababivip/vue` | Vue 3 wrapper components |
+| `@alisababivip/react` | React wrapper components |
+| `@alisababivip/blade` | Laravel Blade bridge |

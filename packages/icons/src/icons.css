@@ -50,7 +50,7 @@
 .ios-icon--ping   { animation: ios-icon-ping   1.5s cubic-bezier(0,0,.2,1) infinite; }
 .ios-icon--fade   { animation: ios-icon-fade   2s ease infinite; }
 
-/* @nlpgroup/icons — Auto-generated CSS token map */
+/* @alisababivip/icons — Auto-generated CSS token map */
 
 /* ── UI ─────────────────── */
 .ios-icon-home { --ios-icon: url("../svg/ui/home.svg"); }

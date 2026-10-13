@@ -32,46 +32,46 @@ jobs:
         with:
           node-version: 20
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@nlpgroup'
+          scope: '@alisababivip'
 
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
 
       # Build chỉ packages có thể build được (bỏ qua packages chưa có src)
       - name: Build tokens
-        run: pnpm --filter @nlpgroup/tokens run build --if-present || true
+        run: pnpm --filter @alisababivip/tokens run build --if-present || true
 
       - name: Build icons (generate SVGs)
-        run: pnpm --filter @nlpgroup/icons run generate --if-present || true
+        run: pnpm --filter @alisababivip/icons run generate --if-present || true
 
       # ── Publish từng package lên GitHub Packages ───────────
-      - name: Publish @nlpgroup/tokens
-        run: pnpm publish --filter @nlpgroup/tokens --no-git-checks
+      - name: Publish @alisababivip/tokens
+        run: pnpm publish --filter @alisababivip/tokens --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish @nlpgroup/icons
-        run: pnpm publish --filter @nlpgroup/icons --no-git-checks
+      - name: Publish @alisababivip/icons
+        run: pnpm publish --filter @alisababivip/icons --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish @nlpgroup/core
-        run: pnpm publish --filter @nlpgroup/core --no-git-checks
+      - name: Publish @alisababivip/core
+        run: pnpm publish --filter @alisababivip/core --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish @nlpgroup/vue
-        run: pnpm publish --filter @nlpgroup/vue --no-git-checks
+      - name: Publish @alisababivip/vue
+        run: pnpm publish --filter @alisababivip/vue --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish @nlpgroup/react
-        run: pnpm publish --filter @nlpgroup/react --no-git-checks
+      - name: Publish @alisababivip/react
+        run: pnpm publish --filter @alisababivip/react --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish @nlpgroup/blade
-        run: pnpm publish --filter @nlpgroup/blade --no-git-checks
+      - name: Publish @alisababivip/blade
+        run: pnpm publish --filter @alisababivip/blade --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -85,12 +85,12 @@ jobs:
 
             | Package | Version | Install |
             |---------|---------|---------|
-            | `@nlpgroup/tokens` | `${{ github.ref_name }}` | `pnpm add @nlpgroup/tokens@${{ github.ref_name }}` |
-            | `@nlpgroup/icons`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/icons@${{ github.ref_name }}` |
-            | `@nlpgroup/core`   | `${{ github.ref_name }}` | `pnpm add @nlpgroup/core@${{ github.ref_name }}` |
-            | `@nlpgroup/vue`    | `${{ github.ref_name }}` | `pnpm add @nlpgroup/vue@${{ github.ref_name }}` |
-            | `@nlpgroup/react`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/react@${{ github.ref_name }}` |
-            | `@nlpgroup/blade`  | `${{ github.ref_name }}` | `pnpm add @nlpgroup/blade@${{ github.ref_name }}` |
+            | `@alisababivip/tokens` | `${{ github.ref_name }}` | `pnpm add @alisababivip/tokens@${{ github.ref_name }}` |
+            | `@alisababivip/icons`  | `${{ github.ref_name }}` | `pnpm add @alisababivip/icons@${{ github.ref_name }}` |
+            | `@alisababivip/core`   | `${{ github.ref_name }}` | `pnpm add @alisababivip/core@${{ github.ref_name }}` |
+            | `@alisababivip/vue`    | `${{ github.ref_name }}` | `pnpm add @alisababivip/vue@${{ github.ref_name }}` |
+            | `@alisababivip/react`  | `${{ github.ref_name }}` | `pnpm add @alisababivip/react@${{ github.ref_name }}` |
+            | `@alisababivip/blade`  | `${{ github.ref_name }}` | `pnpm add @alisababivip/blade@${{ github.ref_name }}` |
 
             ### Cài đặt
 
@@ -101,7 +101,7 @@ jobs:
 
             Sau đó:
             ```bash
-            pnpm add @nlpgroup/tokens @nlpgroup/core
+            pnpm add @alisababivip/tokens @alisababivip/core
             ```
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

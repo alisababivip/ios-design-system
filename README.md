@@ -1,6 +1,6 @@
 # ios-design-system
 
-**@nlpgroup/ios-ui** — Pure iOS Human Interface Design System for Web & Modern Frameworks  
+**@alisababivip/ios-ui** — Pure iOS Human Interface Design System for Web & Modern Frameworks  
 *Lightweight · Zero-drift · Token-driven · NLP Group*
 
 ---
@@ -54,14 +54,14 @@ nlpgroup-ios-ui/
 ## Cài đặt
 
 ```bash
-pnpm add @nlpgroup/tokens @nlpgroup/core
+pnpm add @alisababivip/tokens @alisababivip/core
 ```
 
 ## Sử dụng nhanh
 
 ```html
 <!-- Import tokens + controls bundle -->
-<link rel="stylesheet" href="node_modules/@nlpgroup/core/dist/ios-ui.css" />
+<link rel="stylesheet" href="node_modules/@alisababivip/core/dist/ios-ui.css" />
 
 <!-- CupertinoSwitch -->
 <label class="ios-switch">

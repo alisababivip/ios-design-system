@@ -1,5 +1,5 @@
 {
-  "name": "@nlpgroup/blade",
+  "name": "@alisababivip/blade",
   "version": "0.1.0",
   "description": "Laravel Blade Components & Directives bridge for iOS Design System",
   "repository": "https://github.com/alisababivip/ios-design-system.git",
@@ -17,8 +17,8 @@
     "clean": "rimraf dist"
   },
   "dependencies": {
-    "@nlpgroup/tokens": "workspace:*",
-    "@nlpgroup/core": "workspace:*"
+    "@alisababivip/tokens": "workspace:*",
+    "@alisababivip/core": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^5.0.7",

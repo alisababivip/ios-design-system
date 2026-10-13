@@ -1,6 +1,6 @@
 # Design Tokens
 
-Tất cả tokens được định nghĩa dưới dạng **CSS Custom Properties** trong `@nlpgroup/tokens`.
+Tất cả tokens được định nghĩa dưới dạng **CSS Custom Properties** trong `@alisababivip/tokens`.
 
 ## Typography Scale
 

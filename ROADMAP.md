@@ -1,4 +1,4 @@
-# 🥝 @nlpgroup/ios-ui — Roadmap mở rộng
+# 🥝 @alisababivip/ios-ui — Roadmap mở rộng
 
 > **All-in-One iOS-style Atomic Design System & UI Kits**  
 > *Lightweight · Zero-drift · Token-driven · Open Source*  
@@ -9,7 +9,7 @@
 ## Tầm nhìn thư viện
 
 ```
-@nlpgroup/ios-ui
+@alisababivip/ios-ui
 ├── Mã nguồn mở (MIT License)
 ├── Publish đồng thời → GitHub Packages + npmjs.org
 ├── Hỗ trợ: HTML · Vue 3 · React · Next.js · Laravel Blade
@@ -428,7 +428,7 @@ Trang:
 ├── Tuyển dụng (Job board + Card)
 └── Liên hệ (Form + Map)
 
-Stack: Nuxt 3 (SSR) · Vue 3 · @nlpgroup/vue · SEO
+Stack: Nuxt 3 (SSR) · Vue 3 · @alisababivip/vue · SEO
 ```
 
 ---
@@ -441,11 +441,11 @@ Stack: Nuxt 3 (SSR) · Vue 3 · @nlpgroup/vue · SEO
 # .github/workflows/release.yml (mục tiêu)
 jobs:
   publish-github:
-    # Publish @nlpgroup/* → npm.pkg.github.com
+    # Publish @alisababivip/* → npm.pkg.github.com
     # NODE_AUTH_TOKEN: secrets.GITHUB_TOKEN
 
   publish-npm:
-    # Publish @nlpgroup/* → registry.npmjs.org
+    # Publish @alisababivip/* → registry.npmjs.org
     # NODE_AUTH_TOKEN: secrets.NPM_TOKEN
 ```
 
@@ -463,16 +463,16 @@ jobs:
 
 ```bash
 # Cài toàn bộ
-pnpm add @nlpgroup/tokens @nlpgroup/core
+pnpm add @alisababivip/tokens @alisababivip/core
 
 # Chỉ tokens
-pnpm add @nlpgroup/tokens
+pnpm add @alisababivip/tokens
 
 # Vue 3
-pnpm add @nlpgroup/vue
+pnpm add @alisababivip/vue
 
 # React / Next.js
-pnpm add @nlpgroup/react
+pnpm add @alisababivip/react
 
 # Laravel Blade
 composer require nlpgroup/blade-ui   # (tương lai)
@@ -671,10 +671,10 @@ git push origin v0.2.0
 
 | Kit | Framework | Giai đoạn | Status |
 |---|---|---|---|
-| 🌷 Energy Dashboard | Vue 3 + @nlpgroup/vue | G4 | ⬜ |
-| 🌷 EV Station Manager | Vue 3 + @nlpgroup/vue | G4 | ⬜ |
-| 🌷 User Profile & KYC | Vue 3 + @nlpgroup/vue | G4 | ⬜ |
-| 🌷 ESG & Carbon Board | Vue 3 + @nlpgroup/vue | G4 | ⬜ |
+| 🌷 Energy Dashboard | Vue 3 + @alisababivip/vue | G4 | ⬜ |
+| 🌷 EV Station Manager | Vue 3 + @alisababivip/vue | G4 | ⬜ |
+| 🌷 User Profile & KYC | Vue 3 + @alisababivip/vue | G4 | ⬜ |
+| 🌷 ESG & Carbon Board | Vue 3 + @alisababivip/vue | G4 | ⬜ |
 | 🌷 NLP Group Website | Nuxt 3 (SSR) | G4 | ⬜ |
 
 ---

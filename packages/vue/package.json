@@ -1,5 +1,5 @@
 {
-  "name": "@nlpgroup/vue",
+  "name": "@alisababivip/vue",
   "version": "0.1.0",
   "description": "Vue 3 wrapper components cho iOS Design System",
   "repository": "https://github.com/alisababivip/ios-design-system.git",
@@ -28,8 +28,8 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@nlpgroup/tokens": "workspace:*",
-    "@nlpgroup/core": "workspace:*"
+    "@alisababivip/tokens": "workspace:*",
+    "@alisababivip/core": "workspace:*"
   },
   "devDependencies": {
     "rimraf": "^5.0.7",

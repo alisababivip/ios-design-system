@@ -14,7 +14,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    siteTitle: '@nlpgroup/ios-ui',
+    siteTitle: '@alisababivip/ios-ui',
 
     nav: [
       { text: 'Bắt đầu', link: '/guide/getting-started' },
