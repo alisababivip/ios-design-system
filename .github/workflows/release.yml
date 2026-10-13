@@ -35,7 +35,7 @@ jobs:
           scope: '@nlpgroup'
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build all packages
         run: pnpm build
