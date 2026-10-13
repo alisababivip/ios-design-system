@@ -2,6 +2,7 @@
   "name": "@nlpgroup/docs",
   "private": true,
   "version": "0.0.1",
+  "type": "module",
   "description": "NLP Group iOS UI — Documentation site (VitePress)",
   "scripts": {
     "dev": "vitepress dev",
