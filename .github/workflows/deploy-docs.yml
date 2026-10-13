@@ -30,13 +30,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --no-frozen-lockfile
 
       - name: Build VitePress
-        run: pnpm --filter docs run build
+        run: pnpm --filter @nlpgroup/docs run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
